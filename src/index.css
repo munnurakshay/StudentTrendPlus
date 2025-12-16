@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/* Custom CSS Variables for Fluent Design - Soft Blues & Purple Accents */
+@theme {
+  --color-primary-50: #e6f2ff;
+  --color-primary-100: #cce5ff;
+  --color-primary-200: #99ccff;
+  --color-primary-300: #66b3ff;
+  --color-primary-400: #3399ff;
+  --color-primary-500: #0078d4;
+  --color-primary-600: #0063b1;
+  --color-primary-700: #004e8c;
+  --color-primary-800: #003966;
+  --color-primary-900: #002440;
+  
+  --color-accent-50: #f3e5ff;
+  --color-accent-100: #e6ccff;
+  --color-accent-200: #cc99ff;
+  --color-accent-300: #b366ff;
+  --color-accent-400: #9933ff;
+  --color-accent-500: #8000ff;
+  --color-accent-600: #6600cc;
+  --color-accent-700: #4d0099;
+  --color-accent-800: #330066;
+  --color-accent-900: #1a0033;
+
+  --font-family-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
+  color: #323130;
+}
