@@ -10,6 +10,7 @@ import { auth, db } from '../config/firebase';
 
 const AuthContext = createContext();
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
@@ -41,20 +42,16 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const signup = async (email, password, userData) => {
-    try {
-      const result = await createUserWithEmailAndPassword(auth, email, password);
-      
-      // Create user document in Firestore
-      await setDoc(doc(db, 'users', result.user.uid), {
-        email: email,
-        createdAt: new Date().toISOString(),
-        ...userData
-      });
+    const result = await createUserWithEmailAndPassword(auth, email, password);
+    
+    // Create user document in Firestore
+    await setDoc(doc(db, 'users', result.user.uid), {
+      email: email,
+      createdAt: new Date().toISOString(),
+      ...userData
+    });
 
-      return result;
-    } catch (error) {
-      throw error;
-    }
+    return result;
   };
 
   const login = async (email, password) => {
